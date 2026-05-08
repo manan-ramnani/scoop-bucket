@@ -1,0 +1,27 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  manifests:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check manifest JSON
+        shell: pwsh
+        run: |
+          $manifests = Get-ChildItem -Path bucket -Filter *.json -File -ErrorAction SilentlyContinue
+          if (-not $manifests) {
+            Write-Host "No manifests yet"
+            exit 0
+          }
+          foreach ($manifest in $manifests) {
+            Get-Content -LiteralPath $manifest.FullName -Raw | ConvertFrom-Json | Out-Null
+          }
