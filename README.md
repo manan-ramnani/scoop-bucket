@@ -1,6 +1,6 @@
 # Scoop bucket for bkt
 
-This bucket publishes the Scoop manifest for [`bkt`](https://github.com/cryptekbits/bbCLI), a Rust Bitbucket CLI.
+This bucket publishes the Scoop manifest for [`bkt`](https://github.com/manan-ramnani/bitbucket-cli), a Rust Bitbucket CLI.
 
 The manifest is generated from GitHub Release artifacts by the `bbCLI` release workflow after each tagged release.
 
@@ -14,5 +14,5 @@ scoop install bitbucket-cli
 ## Maintainer Notes
 
 - Do not hand-edit hashes unless repairing a failed release.
-- The source release artifacts live in `https://github.com/cryptekbits/bbCLI/releases`.
+- The source release artifacts live in `https://github.com/manan-ramnani/bitbucket-cli/releases`.
 - The expected manifest path is `bucket/bitbucket-cli.json`.
